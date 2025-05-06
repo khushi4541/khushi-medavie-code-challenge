@@ -1,0 +1,89 @@
+@use "./mixins" as *;
+
+@font-face {
+  font-family: "Newsreader";
+  src: url(../../assets/font/Newsreader-Regular.woff) format("woff"),
+    url(../../assets/font/Newsreader-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url(../../assets/font/Newsreader-Light.woff) format("woff"),
+    url(../../assets/font/Newsreader-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url(../../assets/font/Newsreader-LightItalic.woff) format("woff"),
+    url(../../assets/font/Newsreader-LightItalic.woff2) format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(../../assets/font/Outfit-Medium.woff) format("woff"),
+    url(../../assets/font/Outfit-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url(../../assets/font/Outfit-Light.woff) format("woff"),
+    url(../../assets/font/Outfit-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Newsreader";
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2rem;
+
+  @include tablet {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+h2 {
+  font-family: "Newsreader";
+  font-weight: 300;
+  font-size: 1.625rem;
+  line-height: 2.375rem;
+
+  @include tablet {
+    font-size: 3.25rem;
+    line-height: 4.125rem;
+  }
+}
+
+h3 {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.438rem;
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+}
+
+p {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.938rem;
+
+  @include tablet {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+}
