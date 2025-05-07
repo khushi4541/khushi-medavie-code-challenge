@@ -1,0 +1,29 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  padding: 0 2rem;
+
+  &__banner {
+    background-image: url(../../assets/images/hero-banner.jpg);
+    background-size: cover;
+    background-position: 50% 20%;
+    height: 50vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 15px;
+
+    @include desktop {
+      height: 20vw;
+    }
+  }
+
+  &__title {
+    margin-right: 2rem;
+    font-family: "outfit";
+    font-weight: 300;
+  }
+}

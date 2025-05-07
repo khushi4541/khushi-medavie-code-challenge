@@ -1,0 +1,21 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.search {
+  @include flex-space-between;
+  width: 35%;
+
+  &__input {
+    @include input-box;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+    height: 2.25rem;
+    margin-right: 1rem;
+  }
+
+  &__button {
+    @include primary-button;
+  }
+}

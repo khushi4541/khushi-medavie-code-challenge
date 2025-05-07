@@ -1,10 +1,14 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/variables" as *;
 
+
+body {
+  box-sizing: border-box;
+  color: $primary-text;
+  background-color: $primary-background;
+  margin: 0;
+}
 
 
 

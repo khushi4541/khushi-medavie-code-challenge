@@ -1,0 +1,58 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  margin-bottom: 2.5rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
+  
+  @include desktop {
+    margin-bottom: 0;
+  }
+
+  &-alt {
+    margin: 0;
+  }
+
+
+  &__logo {
+    margin: 0;
+  }
+
+  &__link {
+    @include reset-link-styling;
+  }
+
+  &__image {
+    fill: none;
+    fill: currentColor;
+    width: 15px;
+    height: 11px;
+    padding-left: 0.5rem;
+  }
+
+  &__home-link {
+    @include reset-link-styling;
+  }
+
+  &__back {
+    @include flex-center;
+  }
+
+  &__arrow {
+    fill: $primary-button;
+  }
+
+  &__home {
+    font-size: 1.125rem;
+    line-height: 1.438rem;
+    color: $primary-button;
+    margin: 0 0 0 1rem;
+  }
+}

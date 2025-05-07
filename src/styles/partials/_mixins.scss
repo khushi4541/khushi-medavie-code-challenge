@@ -33,6 +33,25 @@
   line-height: 0.938rem;
 }
 
+@mixin primary-button {
+  font-family: "Outfit";
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.938rem;
+  border: 2px solid $primary-button;
+  padding: 0 2rem;
+  height: 2.25rem;
+  background-color: transparent;
+  border-radius: 18px;
+  color: $primary-button;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-button;
+    color: #fff;
+  }
+}
+
 @mixin tablet {
   @media (min-width: $tablet-breakpoint) {
     @content;

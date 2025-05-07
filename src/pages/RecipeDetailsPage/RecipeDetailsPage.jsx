@@ -1,7 +1,7 @@
 import "./RecipeDetailsPage.scss"
 
 function RecipeDetailsPage () {
-    return <></>
+    return <>Recipes</>
 }
 
 export default RecipeDetailsPage;
