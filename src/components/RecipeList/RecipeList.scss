@@ -1,0 +1,24 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.recipe-list {
+  &__container {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+  }
+
+  &__link {
+    @include reset-link-styling;
+    display: contents;
+  }
+}

@@ -14,10 +14,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    border: 1px solid $secondary-border;
     border-radius: 15px;
 
     @include desktop {
       height: 20vw;
+      border-width: 2px;
     }
   }
 

@@ -1,0 +1,40 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.card {
+  border: 1px solid $secondary-border;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  position: relative;
+  background-color: $secondary-background;
+
+  @include tablet {
+    width: 48%;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  @include desktop {
+    width: 31.5%;
+    border-width: 2px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    @include reset-link-styling;
+    margin: 0;
+  }
+
+  &__info {
+    @include flex-center;
+    background-color: $secondary-background;
+    padding: 0.5rem;
+    height: 3.5rem;
+    text-align: center;
+  }
+}
