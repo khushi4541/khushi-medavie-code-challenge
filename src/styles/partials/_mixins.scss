@@ -53,6 +53,12 @@
     background-color: $primary-button;
     color: #fff;
   }
+
+  @include tablet {
+    border-radius: 30px;
+    padding: 0.5rem 1.75rem;
+    font-size: 0.8rem;
+  }
 }
 
 @mixin tablet {

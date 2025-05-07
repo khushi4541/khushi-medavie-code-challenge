@@ -5,23 +5,26 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-function RecipeList() {
+function RecipeList({activeType}) {
   const [recipeData, setRecipeData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchRecipeData = async () => {
-      const url = `${baseURL}/complexSearch?number=30&apiKey=${apiKey}`;
+      const url = `${baseURL}/complexSearch?number=30&apiKey=${apiKey}${
+      activeType ? `&cuisine=${activeType}` : ""}`;
       try {
         const response = await axios.get(url);
         setRecipeData(response.data.results);
+        setCurrentPage(1);
       } catch (error) {
         console.error(error);
       }
     };
     fetchRecipeData();
-  }, []);
+  }, [activeType]);
 
+  //pagination logic
   const itemsPerPage = 6;
   const totalPages = Math.ceil(recipeData.length / itemsPerPage);
 
@@ -43,15 +46,6 @@ function RecipeList() {
     setCurrentPage(pageNumber);
   };
 
-  //   let filteredRecipes = [];
-
-  //   if (activeType === null) {
-  //     filteredRecipes = recipeData;
-  //   } else {
-  //     filteredRecipes = recipeData.filter((data) =>
-  //       data.cusine.includes(activeType)
-  //     );
-  //   }
   return (
     <section className="recipe-list">
       <div className="recipe-list__container">

@@ -1,0 +1,28 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+
+.filter-button {
+  @include primary-button;
+  margin: 1rem 0 0 1rem;
+
+  @include tablet {
+    margin: 2rem 0 0 2rem;
+  }
+
+  &__image {
+    fill: none;
+    fill: currentColor;
+    width: 15px;
+    height: 11px;
+    padding-left: 0.5rem;
+    &:hover {
+      fill: white;
+    }
+  }
+
+  &--active {
+    background-color: $primary-button;
+    color: #fff;
+  }
+}
