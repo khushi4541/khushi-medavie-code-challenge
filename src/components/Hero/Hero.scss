@@ -3,7 +3,11 @@
 @use "../../styles/partials/variables" as *;
 
 .hero {
-  padding: 0 2rem;
+  padding: 0 1rem;
+
+  @include tablet {
+    padding: 0 2rem;
+  }
 
   &__banner {
     background-image: url(../../assets/images/hero-banner.jpg);
@@ -18,14 +22,21 @@
     border-radius: 15px;
 
     @include desktop {
-      height: 20vw;
+      height: 25vw;
       border-width: 2px;
     }
   }
 
   &__title {
-    margin-right: 2rem;
+    
     font-family: "outfit";
     font-weight: 300;
+    margin-right: 0.5rem;
+    width: 45%;
+    text-wrap: wrap;
+
+    @include tablet {
+      margin-right: 1.5rem;
+    }
   }
 }

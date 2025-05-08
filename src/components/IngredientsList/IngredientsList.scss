@@ -1,0 +1,42 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.ingredients {
+  background-color: white;
+  margin: 1rem;
+  border: 1px solid $secondary-border;
+  border-radius: 12px;
+  text-align: center;
+
+  @include tablet {
+    margin: 2rem;
+  }
+
+  &__title {
+    margin: 1rem 0;
+    color: $primary-button;
+
+    @include tablet {
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    @include tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-row-gap: 1rem;
+      grid-column-gap: 2rem;
+      text-align: left;
+      padding: 2rem 3rem;
+    }
+  }
+
+  &__name {
+    @include tablet {
+      margin: 0.25rem 0;
+    }
+  }
+}

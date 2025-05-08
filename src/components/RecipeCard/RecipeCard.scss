@@ -21,6 +21,20 @@
     border-width: 2px;
   }
 
+  &-alt {
+    margin: 1rem;
+
+    @include tablet {
+      border-width: 2px;
+      margin: 2rem auto;
+      width: 70%;
+    }
+
+    @include desktop {
+      width: 50%;
+    }
+  }
+
   &__image {
     width: 100%;
   }
@@ -28,13 +42,30 @@
   &__title {
     @include reset-link-styling;
     margin: 0;
+
+    &-alt {
+        font-size: 1rem;
+      @include tablet {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   &__info {
     @include flex-center;
     background-color: $secondary-background;
-    padding: 0.5rem;
-    height: 3.5rem;
     text-align: center;
+    padding: 0.25rem;
+    height: 2rem;
+
+    @include tablet {
+      padding: 0.5rem;
+      height: 3.5rem;
+    }
+
+    &-alt {
+      padding: 0.5rem;
+      height: 3rem;
+    }
   }
 }
