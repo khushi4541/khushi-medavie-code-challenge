@@ -15,6 +15,12 @@ function SearchBar({ setSearchResults, setActiveType }) {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   const handleSearch = async () => {
     if (!query.trim()) return;
 
@@ -36,6 +42,7 @@ function SearchBar({ setSearchResults, setActiveType }) {
         placeholder="Find Recipes..."
         value={query}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
       />
       <button className="search__button" onClick={handleSearch}>Search</button>
     </div>

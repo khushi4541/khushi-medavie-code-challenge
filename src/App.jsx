@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/khushi-medavie-code-challenge">
         <Header
           setActiveType={setActiveType}
           setSearchResults={setSearchResults}
