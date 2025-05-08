@@ -35,7 +35,7 @@ function RecipeDetailsPage() {
       <RecipeCard data={recipeDetails} />
       <HealthInfo data={recipeDetails} />
       <IngredientsList data={recipeDetails.extendedIngredients} />
-      <RecipeSteps recipeId={recipeId}/>
+      <RecipeSteps recipeId={recipeId} />
     </section>
   );
 }

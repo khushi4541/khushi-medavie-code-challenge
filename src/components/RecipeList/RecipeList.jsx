@@ -68,7 +68,11 @@ function RecipeList({ activeType, searchResults }) {
       </div>
 
       <div className="recipe-list__pagination">
-        <button className="recipe-list__button" onClick={handlePrevious} disabled={currentPage === 1}>
+        <button
+          className="recipe-list__button"
+          onClick={handlePrevious}
+          disabled={currentPage === 1}
+        >
           ←
         </button>
 
@@ -76,13 +80,21 @@ function RecipeList({ activeType, searchResults }) {
           <button
             key={index}
             onClick={() => handlePageClick(index + 1)}
-            className={currentPage === index + 1 ? "recipe-list__button recipe-list__button--active" : "recipe-list__button"}
+            className={
+              currentPage === index + 1
+                ? "recipe-list__button recipe-list__button--active"
+                : "recipe-list__button"
+            }
           >
             {index + 1}
           </button>
         ))}
 
-        <button className="recipe-list__button" onClick={handleNext} disabled={currentPage === totalPages}>
+        <button
+          className="recipe-list__button"
+          onClick={handleNext}
+          disabled={currentPage === totalPages}
+        >
           →
         </button>
       </div>

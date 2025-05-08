@@ -3,42 +3,42 @@
 @use "../../styles/partials/variables" as *;
 
 .steps {
-    padding: 1rem;
-    @include flex-column;
+  padding: 1rem;
+  @include flex-column;
+
+  @include tablet {
+    padding: 2rem 5rem;
+  }
+
+  @include desktop {
+    padding: 2rem 15rem;
+  }
+
+  &__title {
+    color: $primary-button;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1rem;
 
     @include tablet {
-        padding: 2rem 5rem;
     }
+  }
 
-    @include desktop {
-        padding: 2rem 15rem;
-    }
+  &__order {
+    border-radius: 50%;
+    background-color: $secondary-background;
+    width: 2.813rem;
+    height: 2.813rem;
+    @include flex-center;
+  }
 
-    &__title {
-        color: $primary-button;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 1rem;
+  &__step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 
-        @include tablet {}
-    }
-
-    &__order {
-        border-radius: 50%;
-        background-color: $secondary-background;
-        width: 2.813rem;
-        height: 2.813rem;
-        @include flex-center;
-    }
-
-    &__step {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    &__instructions {
-        width: 80%;
-    }
-
+  &__instructions {
+    width: 80%;
+  }
 }

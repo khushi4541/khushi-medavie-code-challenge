@@ -1,7 +1,7 @@
 import "./HealthInfo.scss";
 
 function HealthInfo({ data }) {
-    console.log(data);
+  console.log(data);
   return (
     <article className="health">
       {data.dairyFree ? (

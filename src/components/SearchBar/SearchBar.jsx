@@ -11,7 +11,7 @@ function SearchBar({ setSearchResults, setActiveType }) {
     setQuery(value);
 
     if (value.trim() === "") {
-      setSearchResults([]);       
+      setSearchResults([]);
     }
   };
 
@@ -29,7 +29,7 @@ function SearchBar({ setSearchResults, setActiveType }) {
     try {
       const response = await axios.get(url);
       setSearchResults(response.data.results);
-      setActiveType(""); 
+      setActiveType("");
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +44,9 @@ function SearchBar({ setSearchResults, setActiveType }) {
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
-      <button className="search__button" onClick={handleSearch}>Search</button>
+      <button className="search__button" onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import "./Header.scss";
 import SearchBar from "../SearchBar/SearchBar";
 
-function Header({setActiveType, setSearchResults}) {
+function Header({ setActiveType, setSearchResults }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
@@ -12,7 +12,10 @@ function Header({setActiveType, setSearchResults}) {
         <h1 className="header__logo">Forked</h1>
       </Link>
       {isHomePage ? (
-        <SearchBar setActiveType={setActiveType} setSearchResults={setSearchResults}/>
+        <SearchBar
+          setActiveType={setActiveType}
+          setSearchResults={setSearchResults}
+        />
       ) : (
         <Link to={"/"} className="header__home-link">
           <div className="header__back">

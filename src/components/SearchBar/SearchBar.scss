@@ -6,10 +6,9 @@
   @include flex-space-between;
   width: 100%;
 
-  @include tablet{
+  @include tablet {
     width: 35%;
   }
-  
 
   &__input {
     @include input-box;
