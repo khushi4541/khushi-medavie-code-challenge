@@ -19,7 +19,7 @@ function RecipeCard({ data }) {
           <div className="card__info card__info-alt">
             <p className="card__title card__title-alt">{data.title}</p>
           </div>
-          <img className="card__image" src={data.image} />
+          <img className="card__image card__image-alt" src={data.image} />
         </article>
       )}
     </>

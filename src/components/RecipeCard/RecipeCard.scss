@@ -37,6 +37,10 @@
 
   &__image {
     width: 100%;
+
+    &-alt {
+      display: block;
+    }
   }
 
   &__title {
