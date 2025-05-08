@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import IngredientsList from "../../components/IngredientsList/IngredientsList";
+import HealthInfo from "../../components/HealthInfo/HealthInfo";
 
 function RecipeDetailsPage() {
   const [recipeDetails, setRecipeDetails] = useState(null);
@@ -16,6 +17,7 @@ function RecipeDetailsPage() {
       try {
         const response = await axios.get(url);
         setRecipeDetails(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error(error);
       }
@@ -30,7 +32,10 @@ function RecipeDetailsPage() {
   return (
     <section className="recipe-details">
       <RecipeCard data={recipeDetails} />
-      <IngredientsList data={recipeDetails.extendedIngredients}/>
+      <div className="recipe-details__info">
+        <HealthInfo data={recipeDetails}/>
+        <IngredientsList data={recipeDetails.extendedIngredients} />
+      </div>
     </section>
   );
 }
