@@ -5,14 +5,21 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
-function RecipeList({activeType}) {
+function RecipeList({ activeType, searchResults }) {
   const [recipeData, setRecipeData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const fetchRecipeData = async () => {
+      if (searchResults && searchResults.length) {
+        setRecipeData(searchResults);
+        setCurrentPage(1);
+        return;
+      }
+
       const url = `${baseURL}/complexSearch?number=30&apiKey=${apiKey}${
-      activeType ? `&cuisine=${activeType}` : ""}`;
+        activeType ? `&cuisine=${activeType}` : ""
+      }`;
       try {
         const response = await axios.get(url);
         setRecipeData(response.data.results);
@@ -22,7 +29,7 @@ function RecipeList({activeType}) {
       }
     };
     fetchRecipeData();
-  }, [activeType]);
+  }, [activeType, searchResults]);
 
   //pagination logic
   const itemsPerPage = 6;

@@ -4,8 +4,7 @@ import FilterPanel from "../../components/FilterPanel/FilterPanel";
 import "./HomePage.scss";
 import { useState } from "react";
 
-function HomePage() {
-  const [activeType, setActiveType] = useState(null);
+function HomePage({activeType, setActiveType, searchResults, setSearchResults}) {
   const [isFilterPanelVisible, setIsFilterPanelVisible] = useState(false);
 
   return (
@@ -28,9 +27,9 @@ function HomePage() {
         </svg>
       </button>
       {isFilterPanelVisible && (
-        <FilterPanel activeType={activeType} setActiveType={setActiveType} />
+        <FilterPanel activeType={activeType} setActiveType={setActiveType} setSearchResults={setSearchResults} />
       )}
-      <RecipeList activeType={activeType} />
+      <RecipeList activeType={activeType} searchResults={searchResults} />
     </>
   );
 }

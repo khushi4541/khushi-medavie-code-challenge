@@ -1,9 +1,7 @@
 import "./FilterTags.scss";
-import cusines from "../../data/cusines.json"
+import cusines from "../../data/cusines.json";
 
-
-function FilterTags({ activeType, setActiveType }) {
-
+function FilterTags({ activeType, setActiveType, setSearchResults }) {
   return (
     <div className="filter-tags">
       {cusines.map((tag) => {
@@ -14,6 +12,7 @@ function FilterTags({ activeType, setActiveType }) {
             key={tag}
             onClick={() => {
               setActiveType((prevTag) => (prevTag === tag ? null : tag));
+              setSearchResults([]);
             }}
             className={`filter-tags__tag ${
               isActive ? `filter-tags__tag--active` : ""
