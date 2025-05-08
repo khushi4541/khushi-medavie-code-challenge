@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import IngredientsList from "../../components/IngredientsList/IngredientsList";
 import HealthInfo from "../../components/HealthInfo/HealthInfo";
+import RecipeSteps from "../../components/RecipeSteps/RecipeSteps";
 
 function RecipeDetailsPage() {
   const [recipeDetails, setRecipeDetails] = useState(null);
@@ -17,7 +18,7 @@ function RecipeDetailsPage() {
       try {
         const response = await axios.get(url);
         setRecipeDetails(response.data);
-        console.log(response.data)
+        console.log(response.data);
       } catch (error) {
         console.error(error);
       }
@@ -32,10 +33,9 @@ function RecipeDetailsPage() {
   return (
     <section className="recipe-details">
       <RecipeCard data={recipeDetails} />
-      <div className="recipe-details__info">
-        <HealthInfo data={recipeDetails}/>
-        <IngredientsList data={recipeDetails.extendedIngredients} />
-      </div>
+      <HealthInfo data={recipeDetails} />
+      <IngredientsList data={recipeDetails.extendedIngredients} />
+      <RecipeSteps recipeId={recipeId}/>
     </section>
   );
 }

@@ -10,7 +10,11 @@
   text-align: center;
 
   @include tablet {
-    margin: 2rem;
+    margin: 2rem 5rem;
+  }
+
+  @include desktop {
+    margin: 2rem 15rem;
   }
 
   &__title {
