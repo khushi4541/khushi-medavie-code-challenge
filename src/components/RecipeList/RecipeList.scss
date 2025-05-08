@@ -21,4 +21,33 @@
     @include reset-link-styling;
     display: contents;
   }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  &__button {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid $primary-button;
+    border-radius: 8px;
+    background-color: white;
+    color: $primary-button;
+    cursor: pointer;
+    margin: 0 0.25rem;
+    font-family: "Outfit";
+    font-weight: 500;
+    font-size: 0.75rem;
+
+    @include tablet {
+      padding: 0.5rem 1.75rem;
+      font-size: 0.8rem;
+    }
+
+    &--active {
+      background-color: $primary-button;
+      color: white;
+    }
+  }
 }

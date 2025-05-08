@@ -68,22 +68,22 @@ function RecipeList({ activeType, searchResults }) {
       </div>
 
       <div className="recipe-list__pagination">
-        <button onClick={handlePrevious} disabled={currentPage === 1}>
-          ← Previous
+        <button className="recipe-list__button" onClick={handlePrevious} disabled={currentPage === 1}>
+          ←
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
             onClick={() => handlePageClick(index + 1)}
-            className={currentPage === index + 1 ? "active" : ""}
+            className={currentPage === index + 1 ? "recipe-list__button recipe-list__button--active" : "recipe-list__button"}
           >
             {index + 1}
           </button>
         ))}
 
-        <button onClick={handleNext} disabled={currentPage === totalPages}>
-          Next →
+        <button className="recipe-list__button" onClick={handleNext} disabled={currentPage === totalPages}>
+          →
         </button>
       </div>
     </section>
